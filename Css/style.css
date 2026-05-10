@@ -1,0 +1,455 @@
+/* Reset và thiết lập cơ bản */
+* {
+  margin: 0; /* Xóa margin mặc định của tất cả phần tử */
+  padding: 0; /* Xóa padding mặc định */
+  box-sizing: border-box; /* Quan trọng: Kích thước phần tử bao gồm cả border và padding */
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Thiết lập font chữ mặc định */
+}
+
+body {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+  /* Tạo gradient nền: xanh dương -> đỏ -> xanh dương theo góc 135 độ */
+  color: #333; /* Màu chữ chính */
+  line-height: 1.6; /* Chiều cao dòng (1.6 lần kích thước font) */
+  min-height: 100vh; /* Chiều cao tối thiểu = 100% chiều cao màn hình */
+  padding: 20px; /* Khoảng cách lề trong body */
+}
+
+.container {
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa khối container */
+  padding: 20px; /* Khoảng đệm bên trong container */
+}
+/* Header */
+header {
+  background-color: rgba(0, 0, 0, 0.8); /* Màu nền đen với độ trong suốt 80% */
+  color: white; /* Màu chữ trắng */
+  padding: 20px 0; /* Đệm trên/dưới 20px, trái/phải 0 */
+  text-align: center; /* Căn giữa nội dung */
+  border-radius: 10px; /* Bo góc 10px */
+  margin-bottom: 30px; /* Khoảng cách phía dưới */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Đổ bóng: ngang 0, dọc 4px, độ mờ 15px */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Kích thước chữ 2.5rem (40px) */
+  margin-bottom: 10px; /* Khoảng cách phía dưới */
+}
+
+header p {
+  font-size: 1.2rem; /* Kích thước chữ 1.2rem (19.2px) */
+  opacity: 0.9; /* Độ trong suốt 90% */
+}
+/* Thanh tìm kiếm */
+.search-section {
+  background: white; /* Nền trắng */
+  padding: 25px; /* Đệm 25px tất cả hướng */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin-bottom: 30px; /* Khoảng cách phía dưới */
+}
+
+.search-box {
+  display: flex; /* Sử dụng flexbox layout */
+  max-width: 700px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa khối */
+}
+
+.search-box input {
+  flex: 1; /* Chiếm hết không gian còn lại */
+  padding: 15px; /* Đệm bên trong */
+  border: 2px solid #4a69bd; /* Viền màu xanh dương */
+  border-radius: 5px 0 0 5px; /* Bo góc trái */
+  font-size: 1rem; /* Kích thước chữ */
+  outline: none; /* Loại bỏ viền focus mặc định */
+}
+
+.search-box button {
+  padding: 15px 25px; /* Đệm trên/dưới 15px, trái/phải 25px */
+  background: #4a69bd; /* Nền màu xanh dương */
+  color: white; /* Chữ trắng */
+  border: none; /* Không viền */
+  border-radius: 0 5px 5px 0; /* Bo góc phải */
+  cursor: pointer; /* Biến chuột thành bàn tay khi di chuột */
+  font-size: 1rem; /* Kích thước chữ */
+  transition: background 0.3s; /* Hiệu ứng chuyển màu nền trong 0.3s */
+}
+
+.search-box button:hover {
+  background: #1e3799; /* Đổi màu nền khi di chuột qua */
+}
+/* Grid các linh kiện */
+.components-grid {
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Tạo cột tự động: mỗi cột tối thiểu 280px, tối đa 1fr (chia đều không gian) */
+  gap: 25px; /* Khoảng cách giữa các ô grid */
+  margin-bottom: 40px; /* Khoảng cách phía dưới */
+}
+
+.component-card {
+  background: white; /* Nền trắng */
+  border-radius: 10px; /* Bo góc */
+  overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s; /* Hiệu ứng chuyển đổi trong 0.3s */
+  cursor: pointer; /* Biến chuột thành bàn tay */
+}
+
+.component-card:hover {
+  transform: translateY(-10px); /* Di chuyển lên trên 10px khi di chuột */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Tăng độ đổ bóng */
+}
+
+.card-header {
+  background: #4a69bd; /* Nền màu xanh dương */
+  color: white; /* Chữ trắng */
+  padding: 20px; /* Đệm 20px */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.card-icon {
+  font-size: 3rem; /* Kích thước icon 3rem (48px) */
+  margin-bottom: 15px; /* Khoảng cách phía dưới */
+}
+
+.card-body {
+  padding: 20px; /* Đệm 20px */
+}
+
+.card-body h3 {
+  margin-bottom: 15px; /* Khoảng cách phía dưới */
+  color: #1e3799; /* Màu chữ xanh dương đậm */
+}
+
+.card-body p {
+  margin-bottom: 15px; /* Khoảng cách phía dưới */
+  color: #555; /* Màu chữ xám đậm */
+}
+/* Phần hướng dẫn sử dụng */
+.usage-section {
+  background: white; /* Nền trắng */
+  padding: 30px; /* Đệm 30px */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin-bottom: 30px; /* Khoảng cách phía dưới */
+}
+
+.usage-section h2 {
+  text-align: center; /* Căn giữa */
+  margin-bottom: 25px; /* Khoảng cách phía dưới */
+  color: #1e3799; /* Màu chữ xanh dương đậm */
+  border-bottom: 2px solid #4a69bd; /* Viền dưới */
+  padding-bottom: 10px; /* Đệm dưới */
+}
+
+.usage-content {
+  display: flex; /* Sử dụng flexbox */
+  flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ chỗ */
+  gap: 20px; /* Khoảng cách giữa các phần tử con */
+}
+
+.usage-image {
+  flex: 1; /* Chiếm 1 phần không gian */
+  min-width: 300px; /* Chiều rộng tối thiểu */
+  background: #f1f2f6; /* Màu nền xám nhạt */
+  border-radius: 10px; /* Bo góc */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  padding: 20px; /* Đệm 20px */
+}
+
+.usage-image img {
+  max-width: 100%; /* Chiều rộng tối đa = 100% khung chứa */
+  max-height: 300px; /* Chiều cao tối đa */
+  border-radius: 5px; /* Bo góc nhẹ */
+}
+
+.usage-text {
+  flex: 2; /* Chiếm 2 phần không gian (gấp đôi usage-image) */
+  min-width: 300px; /* Chiều rộng tối thiểu */
+}
+
+.usage-text h3 {
+  color: #1e3799; /* Màu chữ xanh dương đậm */
+  margin-bottom: 15px; /* Khoảng cách phía dưới */
+}
+
+.usage-text ul {
+  list-style-type: none; /* Bỏ dấu đầu dòng mặc định */
+  margin-left: 20px; /* Lề trái */
+}
+
+.usage-text ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các mục */
+  position: relative; /* Thiết lập vị trí tương đối */
+  padding-left: 25px; /* Đệm trái để tạo khoảng cho dấu chấm */
+}
+
+.usage-text ul li:before {
+  content: "•"; /* Thêm nội dung là dấu chấm */
+  color: #4a69bd; /* Màu xanh dương */
+  font-size: 1.5rem; /* Kích thước lớn */
+  position: absolute; /* Vị trí tuyệt đối so với li */
+  left: 0; /* Căn trái */
+  top: -5px; /* Điều chỉnh vị trí dọc */
+}
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8); /* Nền đen trong suốt 80% */
+  color: white; /* Chữ trắng */
+  text-align: center; /* Căn giữa nội dung */
+  padding: 20px; /* Đệm 20px */
+  border-radius: 10px; /* Bo góc */
+  margin-top: 30px; /* Khoảng cách phía trên */
+}
+
+.contact-info {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 20px; /* Khoảng cách giữa các phần tử con */
+  margin-top: 15px; /* Khoảng cách phía trên */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+}
+
+.contact-info a {
+  color: #4a69bd; /* Màu chữ xanh dương */
+  text-decoration: none; /* Bỏ gạch chân */
+  transition: color 0.3s; /* Hiệu ứng chuyển màu trong 0.3s */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 5px; /* Khoảng cách giữa icon và text */
+}
+
+.contact-info a:hover {
+  color: #78e08f; /* Đổi màu khi di chuột qua */
+}
+/* Đánh dấu linh kiện đang xem */
+.component-highlight {
+  border: 3px solid #78e08f; /* Viền màu xanh lá */
+  position: relative; /* Thiết lập vị trí tương đối */
+}
+
+.component-highlight::after {
+  content: "ĐANG XEM"; /* Nội dung hiển thị */
+  position: absolute; /* Vị trí tuyệt đối */
+  top: -10px; /* Vị trí trên cùng */
+  right: 10px; /* Vị trí phải */
+  background: #78e08f; /* Nền màu xanh lá */
+  color: #000; /* Chữ đen */
+  padding: 3px 10px; /* Đệm trên/dưới 3px, trái/phải 10px */
+  border-radius: 10px; /* Bo góc */
+  font-size: 0.8rem; /* Kích thước chữ nhỏ */
+  font-weight: bold; /* Chữ đậm */
+}
+
+.section-title {
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 10px; /* Khoảng cách giữa icon và text */
+}
+
+/* Bảng mã màu điện trở */
+.color-table-container {
+  overflow-x: auto; /* Cho phép cuộn ngang khi bảng quá rộng */
+  margin-top: 15px; /* Khoảng cách phía trên */
+}
+
+.color-table {
+  width: 100%; /* Chiều rộng 100% */
+  border-collapse: collapse; /* Gộp viền các ô */
+  margin-top: 15px; /* Khoảng cách phía trên */
+}
+
+.color-table th,
+.color-table td {
+  padding: 10px; /* Đệm bên trong ô */
+  border: 1px solid #ddd; /* Viền màu xám nhạt */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.color-table thead tr {
+  background-color: #4a69bd; /* Nền màu xanh dương cho hàng tiêu đề */
+  color: white; /* Chữ trắng */
+}
+
+.color-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Màu nền xen kẽ cho hàng chẵn */
+}
+
+.color-table tbody tr:hover {
+  background-color: #f1f2f6; /* Màu nền khi di chuột qua */
+}
+
+/* Màu cho các ô */
+.color-table .black {
+  background-color: black; /* Nền đen */
+  color: white; /* Chữ trắng */
+}
+/* ... (các class màu khác tương tự) ... */
+/* Đánh dấu linh kiện đang xem */
+.component-highlight {
+  border: 3px solid #78e08f; /* Viền màu xanh lá */
+  position: relative; /* Thiết lập vị trí tương đối */
+}
+
+.component-highlight::after {
+  content: "ĐANG XEM"; /* Nội dung hiển thị */
+  position: absolute; /* Vị trí tuyệt đối */
+  top: -10px; /* Vị trí trên cùng */
+  right: 10px; /* Vị trí phải */
+  background: #78e08f; /* Nền màu xanh lá */
+  color: #000; /* Chữ đen */
+  padding: 3px 10px; /* Đệm trên/dưới 3px, trái/phải 10px */
+  border-radius: 10px; /* Bo góc */
+  font-size: 0.8rem; /* Kích thước chữ nhỏ */
+  font-weight: bold; /* Chữ đậm */
+}
+
+.section-title {
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 10px; /* Khoảng cách giữa icon và text */
+}
+
+/* Bảng mã màu điện trở */
+.color-table-container {
+  overflow-x: auto; /* Cho phép cuộn ngang khi bảng quá rộng */
+  margin-top: 15px; /* Khoảng cách phía trên */
+}
+
+.color-table {
+  width: 100%; /* Chiều rộng 100% */
+  border-collapse: collapse; /* Gộp viền các ô */
+  margin-top: 15px; /* Khoảng cách phía trên */
+}
+
+.color-table th,
+.color-table td {
+  padding: 10px; /* Đệm bên trong ô */
+  border: 1px solid #ddd; /* Viền màu xám nhạt */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.color-table thead tr {
+  background-color: #4a69bd; /* Nền màu xanh dương cho hàng tiêu đề */
+  color: white; /* Chữ trắng */
+}
+
+.color-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Màu nền xen kẽ cho hàng chẵn */
+}
+
+.color-table tbody tr:hover {
+  background-color: #f1f2f6; /* Màu nền khi di chuột qua */
+}
+
+/* Màu cho các ô */
+.color-table .black {
+  background-color: rgb(0, 0, 0); /* Nền đen */
+  color: white; /* Chữ trắng */
+}
+.color-table .brown {
+  background-color: brown; /*Nền Nâu*/
+  color: #f1f2f6; /* Chữ trắng */
+}
+.color-table .red {
+  background-color: red;
+  color: #f1f2f6;
+}
+.color-table .orange {
+  background-color: orangered;
+  color: #f1f2f6;
+}
+.color-table .yellow {
+  background-color: yellow;
+  color: rgb(0, 0, 0);
+}
+.color-table .green {
+  background-color: green;
+  color: #f1f2f6;
+}
+.color-table .blue {
+  background-color: blue;
+  color: #ffffff;
+}
+/* ... (các class màu khác tương tự) ... */
+/* Responsive */
+@media (max-width: 768px) {
+  /* Cho màn hình nhỏ hơn 768px */
+  .components-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(250px, 1fr)
+    ); /* Điều chỉnh kích thước cột */
+  }
+
+  .usage-content {
+    flex-direction: column; /* Xếp dọc các phần tử */
+  }
+
+  header h1 {
+    font-size: 2rem; /* Giảm kích thước tiêu đề */
+  }
+
+  .card-icon {
+    font-size: 2.5rem; /* Giảm kích thước icon */
+  }
+
+  .contact-info {
+    flex-direction: column; /* Xếp dọc liên kết */
+    gap: 10px; /* Giảm khoảng cách */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Cho màn hình nhỏ hơn 480px */
+  .search-box {
+    flex-direction: column; /* Xếp dọc ô input và button */
+  }
+
+  .search-box input {
+    border-radius: 5px; /* Bo góc đều */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+  }
+
+  .search-box button {
+    border-radius: 5px; /* Bo góc đều */
+  }
+
+  .components-grid {
+    grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+  }
+}
+/* Điều chỉnh kích thước ảnh linh kiện */
+.component-card img {
+  max-width: 80px; /* Giảm kích thước ảnh */
+  max-height: 80px;
+  object-fit: contain; /* Đảm bảo ảnh không bị méo */
+  margin-bottom: 10px;
+}
+
+/* Xóa hiệu ứng highlight và chữ "ĐANG XEM" */
+.component-highlight {
+  border: none; /* Xóa viền xanh lá */
+}
+
+.component-highlight::after {
+  display: none; /* Ẩn chữ "ĐANG XEM" */
+}
+
+/* Điều chỉnh kích thước icon card */
+.card-icon {
+  font-size: 2rem; /* Giảm kích thước icon */
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none; /* Ẩn phần tử */
+}

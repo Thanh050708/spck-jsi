@@ -1,0 +1,287 @@
+<!doctype html>
+<!-- Khai báo loại tài liệu là HTML5 -->
+<html lang="vi">
+  <!-- Ngôn ngữ chính của trang là tiếng Việt -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Bảng mã ký tự UTF-8 (hỗ trợ tiếng Việt) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Thiết lập viewport cho responsive design -->
+    <title>Linh kiện pro.com</title>
+    <!-- Tiêu đề trang -->
+
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- CSS chính -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Thư viện icon Font Awesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Khối container bao bọc toàn bộ nội dung -->
+    <div class="container">
+      <!-- Phần header -->
+      <header>
+        <h1><i class="fas fa-microchip"></i> Shop linh kiện điện tử</h1>
+        <!-- Tiêu đề chính với icon vi mạch -->
+        <p>Tư vấn và hướng dẫn sử dụng các linh kiện điện tử phổ biến</p>
+        <!-- Mô tả ngắn -->
+        <div class="" id="greeting">
+          <span id="display-name"></span>
+          <button id="btn-logout" class="btn btn-danger">Đăng xuất</button>
+        </div>
+        <a href="./html/login.html" id="btn-login">
+          <button class="btn btn-primary">Đăng nhập</button>
+        </a>
+      </header>
+
+      <!-- Phần tìm kiếm -->
+      <section class="search-box input">
+        <div class="search-box">
+          <!-- Ô nhập liệu tìm kiếm -->
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Tìm kiếm linh kiện điện tử..."
+          />
+          <!-- Nút tìm kiếm với icon -->
+          <button id="searchBtn"><i class="fas fa-search"></i> Tìm kiếm</button>
+        </div>
+      </section>
+      <form class="bg-white p-5" id="form-add-product">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên sản phẩm</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="emailHelp"
+          />
+          <div class="form-text">
+            linh kiện điện tử, mạch điện, cảm biến, v.v.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Giá sản phẩm</label>
+          <input type="number" class="form-control" id="price" name="price" />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label"
+            >Thêm hình ảnh(định dạng: JPG, PNG)</label
+          >
+          <input type="text" class="form-control" id="image" name="image" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <section class="bg-white p-5 mt-5">
+        <h5>Các sản phẩm có trong trang web</h5>
+        <div class="mt-5 row gap-3" id="product-container"></div>
+      </section>
+      <!-- Kết quả tìm kiếm -->
+      <div id="result"></div>
+
+      <!-- Lưới hiển thị các linh kiện -->
+      <div class="components-grid" id="components-grid"></div>
+
+      <!-- Phần hướng dẫn chi tiết -->
+      <section class="usage-section">
+        <h2 class="section-title">
+          <i class="fas fa-book-open"></i> Hướng dẫn sử dụng điện trở
+        </h2>
+        <!-- Tiêu đề với icon sách mở -->
+        <div class="usage-content">
+          <!-- Khối chứa hình ảnh -->
+          <div class="usage-image">
+            <img
+              src="https://file.hstatic.net/200000568629/file/dien-tro-la-gi-2_d748863a6fc347aa9330ef3caa910e5b.jpeg"
+              alt="Điện trở"
+            />
+            <!-- Hình ảnh minh họa -->
+          </div>
+          <!-- Khối chứa nội dung hướng dẫn -->
+          <div class="usage-text">
+            <h3>Cách sử dụng điện trở trong mạch điện</h3>
+            <ul>
+              <!-- Danh sách công dụng -->
+              <li>
+                <strong>Hạn chế dòng điện:</strong> Bảo vệ các linh kiện nhạy
+                cảm như LED khỏi dòng điện quá cao
+              </li>
+              <li>
+                <strong>Phân áp:</strong> Tạo ra các mức điện áp khác nhau bằng
+                cách sử dụng cầu phân áp
+              </li>
+              <li>
+                <strong>Kéo lên/kéo xuống:</strong> Đảm bảo tín hiệu ở mức cao
+                hoặc thấp khi không có tín hiệu đầu vào
+              </li>
+              <li>
+                <strong>Mạch RC:</strong> Kết hợp với tụ điện để tạo mạch lọc,
+                mạch định thời
+              </li>
+              <li>
+                <strong>Cảm biến:</strong> Sử dụng trong các cảm biến nhiệt độ
+                (thermistor) và cảm biến ánh sáng (LDR)
+              </li>
+            </ul>
+
+            <h3>Cách đọc giá trị điện trở</h3>
+            <ul>
+              <!-- Danh sách hướng dẫn đọc giá trị -->
+              <li><strong>4 vạch màu:</strong> 2 chữ số, số mũ, dung sai</li>
+              <li><strong>5 vạch màu:</strong> 3 chữ số, số mũ, dung sai</li>
+              <li>
+                <strong>Ví dụ:</strong> Nâu-Đen-Đỏ-Vàng = 1 0 × 10² Ω ±5% =
+                1000Ω ±5%
+              </li>
+            </ul>
+
+            <h3>Bảng mã màu điện trở</h3>
+            <div class="color-table-container">
+              <!-- Bảng mã màu -->
+              <table class="color-table">
+                <thead>
+                  <!-- Phần tiêu đề bảng -->
+                  <tr>
+                    <th>Màu</th>
+                    <th>Chữ số 1</th>
+                    <th>Chữ số 2</th>
+                    <th>Số mũ</th>
+                    <th>Dung sai</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Phần nội dung bảng -->
+                  <tr>
+                    <td class="black">Đen</td>
+                    <!-- Ô có class định dạng màu -->
+                    <td>0</td>
+                    <td>0</td>
+                    <td>10<sup>0</sup></td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="brown">Nâu</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>10<sup>1</sup></td>
+                    <td>±1%</td>
+                  </tr>
+                  <tr>
+                    <td class="red">Đỏ</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>10<sup>2</sup></td>
+                    <td>±2%</td>
+                  </tr>
+                  <tr>
+                    <td class="orange">Cam</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>10<sup>3</sup></td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="yellow">Vàng</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>10<sup>4</sup></td>
+                    <td>±5%</td>
+                  </tr>
+                  <tr>
+                    <td class="green">Lục</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>10<sup>5</sup></td>
+                    <td>±0.5%</td>
+                  </tr>
+                  <tr>
+                    <td class="blue">Lam</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>10<sup>6</sup></td>
+                    <td>±0.25%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer (chân trang) -->
+      <footer>
+        <p>© 2025 Trung tâm Tư vấn Linh kiện Điện tử</p>
+        <p>Hướng dẫn sử dụng và ứng dụng các linh kiện điện tử trong thực tế</p>
+        <div class="contact-info">
+          <!-- Các liên kết liên hệ -->
+          <a href="#"><i class="fas fa-envelope"></i> contact@electronics.vn</a>
+          <a href="#"><i class="fas fa-phone"></i> 0123.456.789</a>
+          <a href="#"><i class="fab fa-facebook"></i> Electronics Vietnam</a>
+          <a href="#"><i class="fab fa-youtube"></i> Hướng dẫn Điện tử</a>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="../JS/linhkien.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://bot.orimon.ai/deploy/index.js"
+      tenantId="727d777e-2ce4-4b7b-b616-164a0115bf90"
+    ></script>
+    <!-- link CDN của firebase -->
+    <!-- chữ defer có nghĩa là phải tải xong script ở trên thì mới tiếp tục xuống dưới tuần tự -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"
+    ></script>
+
+    <!-- Cấu hình nhận diện chủ sở hữu config -->
+    <script defer src="./firebase.config.js"></script>
+
+    <!-- thư viện swal giúp show thông báo -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- thư viện swal giúp show thông báo -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./js/check-login.js"></script>
+    <script defer src="./js/add-product.js"></script>
+    <script defer src="./js/render-product.js"></script>
+  </body>
+</html>

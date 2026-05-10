@@ -1,0 +1,282 @@
+/* CSS Reset và font chung */
+* {                                    /* Áp dụng cho tất cả elements */
+    margin: 0;                         /* Xóa margin mặc định */
+    padding: 0;                        /* Xóa padding mặc định */
+    box-sizing: border-box;            /* Tính kích thước bao gồm border + padding */
+    font-family: 'Segoe UI', sans-serif; /* Đặt font chữ mặc định */
+}
+
+body {
+    background: linear-gradient(135deg, #12d1a7 0%, #e7e0ee 100%);
+    /* Nền gradient góc 135 độ từ xanh (#12d1a7) sang tím nhạt (#e7e0ee) */
+    
+    display: flex;                     /* Sử dụng flexbox layout */
+    justify-content: center;           /* Căn giữa theo chiều ngang */
+    align-items: center;               /* Căn giữa theo chiều dọc */
+    min-height: 100vh;                 /* Chiều cao tối thiểu = 100% viewport height */
+    padding: 20px;                     /* Khoảng cách 20px xung quanh */
+}
+
+/* Container chính cho form */
+.form-wrapper {
+    width: 420px;                      /* Chiều rộng cố định */
+    background: rgba(255, 255, 255, 0.9); /* Nền trắng với độ trong suốt 90% */
+    color: #333;                       /* Màu chữ chính là xám đậm */
+    border-radius: 10px;               /* Bo góc 10px */
+    padding: 40px 30px;                /* Khoảng cách bên trong: 40px trên/dưới, 30px trái/phải */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+}
+
+/* Tiêu đề form */
+.form-wrapper h2 {
+    font-size: 32px;                   /* Kích thước chữ lớn */
+    text-align: center;                /* Căn giữa tiêu đề */
+    margin-bottom: 30px;               /* Khoảng cách dưới tiêu đề */
+    color: #12d1a7;                    /* Màu chữ xanh giống với gradient */
+}
+
+/* Container cho mỗi trường nhập liệu */
+.form-control {
+    position: relative;                /* Thiết lập vị trí tương đối để định vị icon */
+    width: 100%;                       /* Chiều rộng đầy đủ của container cha */
+    height: 50px;                      /* Chiều cao cố định */
+    margin: 25px 0;                    /* Khoảng cách trên/dưới mỗi trường nhập liệu */
+}
+
+/* Input field */
+.form-control input {
+    width: 100%;                       /* Chiều rộng đầy đủ */
+    height: 100%;                      /* Chiều cao đầy đủ */
+    background: transparent;           /* Nền trong suốt */
+    border: none;                      /* Không viền mặc định */
+    outline: none;                     /* Không outline mặc định khi focus */
+    border: 2px solid rgba(18, 209, 167, 0.5); /* Viền xanh với độ trong suốt 50% */
+    border-radius: 40px;               /* Bo góc tròn */
+    font-size: 16px;                   /* Kích thước chữ */
+    color: #333;                       /* Màu chữ xám đậm */
+    padding: 20px 45px 20px 20px;      /* Khoảng cách bên trong: 20px trên/dưới, 45px phải, 20px trái */
+    transition: all 0.3s ease;         /* Hiệu ứng chuyển tiếp mượt mà cho tất cả thuộc tính */
+}
+
+/* Placeholder (chữ mờ trong input) */
+.form-control input::placeholder {
+    color: rgba(51, 51, 51, 0.7);     /* Màu placeholder xám với độ trong suốt 70% */
+}
+
+/* Khi input được focus (click vào) */
+.form-control input:focus {
+    border-color: #12d1a7;             /* Đổi màu viền thành xanh đậm khi focus */
+    box-shadow: 0 0 8px rgba(18, 209, 167, 0.3); /* Thêm bóng nhẹ màu xanh khi focus */
+}
+
+/* Icon trong form */
+.form-control i {
+    position: absolute;                 /* Định vị tuyệt đối so với container cha */
+    right: 20px;                       /* Cách lề phải 20px */
+    top: 50%;                          /* Đặt ở giữa theo chiều dọc */
+    transform: translateY(-50%);       /* Dịch chuyển lên 50% chiều cao để căn giữa chính xác */
+    font-size: 20px;                   /* Kích thước icon */
+    color: #12d1a7;                    /* Màu icon xanh */
+}
+
+/* Nút submit */
+button[type="submit"] {
+    width: 100%;                       /* Chiều rộng đầy đủ */
+    height: 50px;                      /* Chiều cao cố định */
+    background: #12d1a7;               /* Nền xanh */
+    border: none;                      /* Không viền */
+    outline: none;                     /* Không outline */
+    border-radius: 40px;               /* Bo góc tròn */
+    cursor: pointer;                   /* Con trỏ chuột thành bàn tay khi hover */
+    font-size: 18px;                   /* Kích thước chữ */
+    color: white;                      /* Màu chữ trắng */
+    font-weight: 600;                  /* Độ đậm của chữ */
+    transition: all 0.3s ease;         /* Hiệu ứng chuyển tiếp mượt mà */
+    margin-top: 10px;                  /* Khoảng cách trên */
+}
+
+/* Hiệu ứng khi hover nút submit */
+button[type="submit"]:hover {
+    background: #0fb898;               /* Màu nền xanh đậm hơn khi hover */
+    transform: translateY(-2px);       /* Nâng nút lên 2px khi hover */
+    box-shadow: 0 5px 15px rgba(18, 209, 167, 0.4); /* Thêm bóng khi hover */
+}
+
+/* Container cho các tùy chọn bổ sung */
+.form-help {
+    display: flex;                     /* Sử dụng flexbox layout */
+    justify-content: space-between;    /* Căn đều hai bên trái-phải */
+    align-items: center;               /* Căn giữa theo chiều dọc */
+    margin: 20px 0 15px;               /* Khoảng cách: 20px trên, 0 trái/phải, 15px dưới */
+    font-size: 14px;                   /* Kích thước chữ nhỏ */
+}
+
+/* Phần "Remember me" */
+.remember-me {
+    display: flex;                     /* Sử dụng flexbox layout */
+    align-items: center;               /* Căn giữa theo chiều dọc */
+}
+
+/* Checkbox */
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;                 /* Khoảng cách bên phải checkbox */
+    accent-color: #12d1a7;             /* Màu của checkbox khi được chọn */
+}
+
+/* Liên kết "Need help?" */
+.form-help a {
+    color: #12d1a7;                    /* Màu xanh giống với theme */
+    text-decoration: none;             /* Bỏ gạch chân mặc định */
+    transition: color 0.3s ease;       /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Hiệu ứng khi hover liên kết */
+.form-help a:hover {
+    color: #0fb898;                    /* Màu xanh đậm hơn khi hover */
+    text-decoration: underline;        /* Thêm gạch chân khi hover */
+}
+
+/* Đoạn văn bản cuối form */
+.form-wrapper > p {
+    text-align: center;                /* Căn giữa văn bản */
+    margin-top: 25px;                  /* Khoảng cách trên */
+    font-size: 15px;                   /* Kích thước chữ */
+    color: #666;                       /* Màu chữ xám nhạt */
+}
+
+/* Liên kết trong đoạn văn bản cuối */
+.form-wrapper > p a {
+    color: #12d1a7;                    /* Màu xanh giống với theme */
+    text-decoration: none;             /* Bỏ gạch chân mặc định */
+    font-weight: 600;                  /* Chữ đậm */
+    transition: color 0.3s ease;       /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Hiệu ứng khi hover liên kết cuối */
+.form-wrapper > p a:hover {
+    color: #0fb898;                    /* Màu xanh đậm hơn khi hover */
+    text-decoration: underline;        /* Thêm gạch chân khi hover */
+}
+
+/* Responsive design cho màn hình nhỏ */
+@media (max-width: 480px) {
+    .form-wrapper {
+        width: 100%;                   /* Chiều rộng 100% trên màn hình nhỏ */
+        padding: 30px 20px;            /* Giảm khoảng cách bên trong */
+    }
+    
+    .form-wrapper h2 {
+        font-size: 28px;               /* Giảm kích thước tiêu đề */
+    }
+    
+    .form-help {
+        flex-direction: column;        /* Xếp các phần tử theo chiều dọc */
+        gap: 10px;                     /* Khoảng cách giữa các phần tử */
+    }
+}
+
+/* Tiêu đề from regster */
+.from-wrapper h2 {
+        font-size: 32px;                   /* Kích thước chữ lớn */
+    text-align: center;                /* Căn giữa tiêu đề */
+    margin-bottom: 30px;               /* Khoảng cách dưới tiêu đề */
+    color: #12d1a7;                    /* Màu chữ xanh giống với gradient */
+}
+
+/* Container cho mỗi trường nhập liệu */
+.from-control {
+    position: relative;                /* Thiết lập vị trí tương đối để định vị icon */
+    width: 100%;                       /* Chiều rộng đầy đủ của container cha */
+    height: 50px;                      /* Chiều cao cố định */
+    margin: 25px 0;                    /* Khoảng cách trên/dưới mỗi trường nhập liệu */
+}
+
+/* Input field */
+.from-control input {
+    width: 100%;                       /* Chiều rộng đầy đủ */
+    height: 100%;                      /* Chiều cao đầy đủ */
+    background: transparent;           /* Nền trong suốt */
+    border: none;                      /* Không viền mặc định */
+    outline: none;                     /* Không outline mặc định khi focus */
+    border: 2px solid rgba(18, 209, 167, 0.5); /* Viền xanh với độ trong suốt 50% */
+    border-radius: 40px;               /* Bo góc tròn */
+    font-size: 16px;                   /* Kích thước chữ */
+    color: #333;                       /* Màu chữ xám đậm */
+    padding: 20px 45px 20px 20px;      /* Khoảng cách bên trong: 20px trên/dưới, 45px phải, 20px trái */
+    transition: all 0.3s ease;         /* Hiệu ứng chuyển tiếp mượt mà cho tất cả thuộc tính */
+}
+
+/* Placeholder (chữ mờ trong input) */
+.from-control input::placeholder {
+    color: rgba(51, 51, 51, 0.7);     /* Màu placeholder xám với độ trong suốt 70% */
+}
+
+/* Khi input được focus (click vào) */
+.from-control input:focus {
+    border-color: #12d1a7;             /* Đổi màu viền thành xanh đậm khi focus */
+    box-shadow: 0 0 8px rgba(18, 209, 167, 0.3); /* Thêm bóng nhẹ màu xanh khi focus */
+}
+
+/* Icon trong from */
+.from-control i {
+    position: absolute;                 /* Định vị tuyệt đối so với container cha */
+    right: 20px;                       /* Cách lề phải 20px */
+    top: 50%;                          /* Đặt ở giữa theo chiều dọc */
+    transform: translateY(-50%);       /* Dịch chuyển lên 50% chiều cao để căn giữa chính xác */
+    font-size: 20px;                   /* Kích thước icon */
+    color: #12d1a7;                    /* Màu icon xanh */
+}
+
+/* Container cho các tùy chọn bổ sung */
+.from-help {
+    display: flex;                     /* Sử dụng flexbox layout */
+    justify-content: space-between;    /* Căn đều hai bên trái-phải */
+    align-items: center;               /* Căn giữa theo chiều dọc */
+    margin: 20px 0 15px;               /* Khoảng cách: 20px trên, 0 trái/phải, 15px dưới */
+    font-size: 14px;                   /* Kích thước chữ nhỏ */
+}
+
+/* Liên kết "Need help?" */
+.from-help a {
+    color: #12d1a7;                    /* Màu xanh giống với theme */
+    text-decoration: none;             /* Bỏ gạch chân mặc định */
+    transition: color 0.3s ease;       /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Hiệu ứng khi hover liên kết */
+.from-help a:hover {
+    color: #0fb898;                    /* Màu xanh đậm hơn khi hover */
+    text-decoration: underline;        /* Thêm gạch chân khi hover */
+}
+
+/* Đoạn văn bản cuối form */
+.from-wrapper > p {
+    text-align: center;                /* Căn giữa văn bản */
+    margin-top: 25px;                  /* Khoảng cách trên */
+    font-size: 15px;                   /* Kích thước chữ */
+    color: #666;                       /* Màu chữ xám nhạt */
+}
+
+/* Liên kết trong đoạn văn bản cuối */
+.from-wrapper > p a {
+    color: #12d1a7;                    /* Màu xanh giống với theme */
+    text-decoration: none;             /* Bỏ gạch chân mặc định */
+    font-weight: 600;                  /* Chữ đậm */
+    transition: color 0.3s ease;       /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Hiệu ứng khi hover liên kết cuối */
+.from-wrapper > p a:hover {
+    color: #0fb898;                    /* Màu xanh đậm hơn khi hover */
+    text-decoration: underline;        /* Thêm gạch chân khi hover */
+}
+
+/* Container chính cho from */
+.from-wrapper {                                                                                                                                                                                 
+    width: 420px;                      /* Chiều rộng cố định */
+    background: rgba(255, 255, 255, 0.9); /* Nền trắng với độ trong suốt 90% */
+    color: #333;                       /* Màu chữ chính là xám đậm */
+    border-radius: 10px;               /* Bo góc 10px */
+    padding: 40px 30px;                /* Khoảng cách bên trong: 40px trên/dưới, 30px trái/phải */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../CSS/login.css">
+    <!--  -->
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="from-wrapper">
+        <h2>Register</h2>
+        <!-- from -->
+        <form action="" id="form-dky">
+            <div class="from-control">
+                <label>Username</label>
+                <input type="text" id="username" required>
+                <i class='bx  bx-user'  ></i> 
+            </div>
+
+            <div class="from-control">
+                <label>Email</label>
+                <input type="email" id="email" required>
+                <i class='bx  bx-envelope-open'  ></i> 
+            </div>
+
+            <div class="from-control">
+                <label>Password</label>
+                <input type="password" id="password" required>
+                <i class='bx  bx-building'  ></i> 
+            </div>
+
+            <button type="submit">Sign up</button>
+
+            <div class="form-help">
+                <div class="remeber-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="">Remember me</label>
+                    <a href="">Need help?</a>
+                </div>
+            </div>
+        </form>
+
+        <p>Already have an account <a href="login.html">Sign in now</a></p>
+    </div>
+
+    <script src="../JS/register.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Auth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.13.1/firebase-auth-compat.min.js"
+        integrity="sha512-b2PGOE6ClpdFR5WZylPqJ9NEtHyGtdXKIe5wI0qRKVg3VeH9Km8CvihpnySwf6v21TV2cMTUp/BuglUiFLB38Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Js files -->
+     <script src="../JS/firebase-config.js"></script>
+     <script src="../JS/register.js"></script>
+</body>
+
+</html>
