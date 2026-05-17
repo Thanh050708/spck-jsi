@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- Khai báo loại tài liệu là HTML5 -->
+<html lang="vi">
+  <!-- Ngôn ngữ chính của trang là tiếng Việt -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Bảng mã ký tự UTF-8 (hỗ trợ tiếng Việt) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Thiết lập viewport cho responsive design -->
+    <title>Linh kiện pro.com</title>
+    <!-- Tiêu đề trang -->
+
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <!-- CSS chính -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Thư viện icon Font Awesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Khối container bao bọc toàn bộ nội dung -->
+    <div class="container">
+      <!-- Phần header -->
+      <header>
+        <h1><i class="fas fa-microchip"></i> Shop linh kiện điện tử</h1>
+        <!-- Tiêu đề chính với icon vi mạch -->
+        <p>Tư vấn và hướng dẫn sử dụng các linh kiện điện tử phổ biến</p>
+        <!-- Mô tả ngắn -->
+        <div class="" id="greeting">
+          <span id="display-name"></span>
+          <button id="btn-logout" class="btn btn-danger">Đăng xuất</button>
+        </div>
+        <a href="./html/login.html" id="btn-login">
+          <button class="btn btn-primary">Đăng nhập</button>
+        </a>
+      </header>
+
+    
+     
+
+      <section class="bg-white p-5 mt-5">
+        <h5>Chi tiết sản phẩm</h5>
+        <div class="row align-items-center g-4 mt-4" id="product-detail">
+          <div class="col-md-6" id="detail-text">
+            <div class="card border-0">
+              <div class="card-body">
+                <h2 id="detail-name" class="card-title"></h2>
+                <p id="detail-price" class="text-danger fs-3 fw-bold"></p>
+                <p id="detail-description" class="card-text text-secondary"></p>
+                <div id="detail-meta" class="small text-muted"></div>
+                <div id="detail-actions" class="mt-4 d-none">
+                  <button id="btn-edit" class="btn btn-primary me-2">Sửa sản phẩm</button>
+                  <button id="btn-delete" class="btn btn-danger">Xóa sản phẩm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" id="detail-image-wrapper">
+            <img id="detail-image" src="" alt="Ảnh sản phẩm" class="img-fluid rounded shadow" />
+          </div>
+        </div>
+        <div id="detail-error" class="alert alert-warning d-none mt-4" role="alert"></div>
+      </section>
+    
+    </div>
+    <script type="module" src="../JS/linhkien.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://bot.orimon.ai/deploy/index.js"
+      tenantId="727d777e-2ce4-4b7b-b616-164a0115bf90"
+    ></script>
+    <!-- link CDN của firebase -->
+    <!-- chữ defer có nghĩa là phải tải xong script ở trên thì mới tiếp tục xuống dưới tuần tự -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"
+    ></script>
+
+    <!-- Cấu hình nhận diện chủ sở hữu config -->
+    <script defer src="../firebase.config.js"></script>
+
+    <!-- thư viện swal giúp show thông báo -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../js/check-login.js"></script>
+    <script defer src="../js/render-detail-product.js"></script>
+  </body>
+</html>
